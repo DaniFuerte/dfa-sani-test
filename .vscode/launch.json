@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SanitestApplication<sanitest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.dfa.sanitest.infraestructure.config.SanitestApplication",
+            "projectName": "sanitest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
