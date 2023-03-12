@@ -14,10 +14,10 @@ public class OperacionService {
     
     private final OperacionRepository repository;
 
-
     public Operacion calculate (Operacion operacion) throws Exception {
         if(Objects.nonNull(operacion) && Objects.nonNull(operacion.getType())) {
             operacion.setResult(this.calculateAll(operacion.getParameters(), operacion.getType()));
+            this.save(operacion);
         }
         return operacion;
     }
@@ -27,7 +27,7 @@ public class OperacionService {
         return repository.findById(id);
     }
 
-    public List<Operacion> findByFilter (Operacion filter, boolean order, boolean asc) throws Exception {
+    public List<Operacion> findByFilter (Operacion filter, Boolean order, Boolean asc) throws Exception {
         return repository.findAll(filter, order, asc);
     }
 
@@ -39,6 +39,7 @@ public class OperacionService {
         repository.deleteById(id);
     }
 
+    // operaciones privadas
     private BigDecimal calculateAll (List<BigDecimal> parameters, char type) throws Exception {
 
         BigDecimal result = new BigDecimal(0);

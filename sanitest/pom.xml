@@ -75,6 +75,8 @@
 			<version>${jpa.modelgen.version}</version>
 		</dependency>
 
+		<!-- Swagger dependencies -->
+
 	</dependencies>
 
 	<build>

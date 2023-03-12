@@ -28,8 +28,9 @@ public class OperacionDbRepository implements OperacionRepository {
     }
 
     @Override
-    public List<Operacion> findAll(Operacion filter, boolean order, boolean asc) throws Exception {
+    public List<Operacion> findAll(Operacion filter, Boolean order, Boolean asc) throws Exception {
         
+        asc = checkOrderParameters(order, asc);
         List<Operacion> result  = new ArrayList<>();
         List<OperacionDao> list = repository.findAll(OperacionSpecification.filter(mapper.toOperacionDao(filter), order, asc));
         list.forEach(o -> result.add(mapper.toOperacionDomain(o)));
@@ -51,6 +52,10 @@ public class OperacionDbRepository implements OperacionRepository {
 
     private OperacionDao findByPK (Long id) throws Exception {
         return repository.findById(id).orElseThrow(() -> new Exception(SaniTestConsts.NOT_FOUND));
+    }
+
+    private Boolean checkOrderParameters (Boolean order, Boolean asc) {
+        return (Objects.nonNull(order) && Objects.isNull(asc)) ? true : asc;
     }
     
 }
