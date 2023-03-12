@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.dfa.sanitest.infraestructure.db.dao.OperacionDao;
 
 @Repository
-public interface OperacionDataRepository extends JpaRepository<OperacionDao,Long>, JpaSpecificationExecutor {
+public interface OperacionDataRepository extends JpaRepository<OperacionDao,Long>, JpaSpecificationExecutor<OperacionDao> {
     
 }
