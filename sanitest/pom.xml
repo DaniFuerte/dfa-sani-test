@@ -18,6 +18,7 @@
 		<java.version>11</java.version>
 		<mapstruct.version>1.2.0.Final</mapstruct.version>
 		<jpa.modelgen.version>5.3.7.Final</jpa.modelgen.version>
+		<spring.starter.web.version>3.0.4</spring.starter.web.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -27,6 +28,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring.starter.web.version}</version>
 		</dependency>
 
 		<dependency>
@@ -76,6 +78,11 @@
 		</dependency>
 
 		<!-- Swagger dependencies -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
 
 	</dependencies>
 
