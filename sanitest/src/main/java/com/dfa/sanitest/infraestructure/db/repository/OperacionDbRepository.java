@@ -32,7 +32,7 @@ public class OperacionDbRepository implements OperacionRepository {
         
         asc = checkOrderParameters(order, asc);
         List<Operacion> result  = new ArrayList<>();
-        List<OperacionDao> list = repository.findAll(OperacionSpecification.filter(mapper.toOperacionDao(filter), order, asc));
+        List<OperacionDao> list = repository.findAll(OperacionSpecification.buildFilter(mapper.toOperacionDao(filter), order, asc));
         list.forEach(o -> result.add(mapper.toOperacionDomain(o)));
         return result;
 

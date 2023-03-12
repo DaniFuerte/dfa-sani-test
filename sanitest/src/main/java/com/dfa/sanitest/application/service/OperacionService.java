@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import com.dfa.sanitest.application.repository.OperacionRepository;
 import com.dfa.sanitest.domain.Operacion;
+import com.dfa.sanitest.domain.Parametro;
 
 import lombok.RequiredArgsConstructor;
 
@@ -40,14 +41,14 @@ public class OperacionService {
     }
 
     // operaciones privadas
-    private BigDecimal calculateAll (List<BigDecimal> parameters, char type) throws Exception {
+    private BigDecimal calculateAll (List<Parametro> parameters, char type) throws Exception {
 
         BigDecimal result = new BigDecimal(0);
         parameters.forEach(p -> {
             switch(type) {
-                case '+'    :   result.add(p);
+                case '+'    :   result.add(p.getParameter());
                                 break;
-                case '-'    :   result.subtract(p);   
+                case '-'    :   result.subtract(p.getParameter());   
                                 break;
                 default     :   throw new RuntimeException();        
             }

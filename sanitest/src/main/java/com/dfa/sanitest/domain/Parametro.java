@@ -1,8 +1,6 @@
 package com.dfa.sanitest.domain;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -17,12 +15,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Operacion {
-    
-    private Long                id;
-    private List<Parametro>     parameters;
-    private Character           type;
-    private BigDecimal          result;
-    private LocalDateTime       sysDate;
+public class Parametro {
 
+    private Long                id;
+    private BigDecimal          parameter;
+    private Operacion           operacion;
+    
 }

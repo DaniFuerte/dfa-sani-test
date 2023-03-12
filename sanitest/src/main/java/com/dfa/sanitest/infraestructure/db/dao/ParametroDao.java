@@ -4,13 +4,15 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -24,17 +26,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class OperacionDao {
-    
+public class ParametroDao {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long                id;
 
-    @OneToMany(mappedBy = "operacion", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
-    private List<ParametroDao>    parameters;
+    private BigDecimal          parameter;
 
-    private Character           type;
-    private BigDecimal          result;
-    private LocalDateTime       sysDate;
-
+    @ManyToOne
+    private OperacionDao        operacion;
+    
 }

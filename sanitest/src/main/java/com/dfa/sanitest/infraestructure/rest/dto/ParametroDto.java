@@ -1,8 +1,9 @@
-package com.dfa.sanitest.domain;
+package com.dfa.sanitest.infraestructure.rest.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -17,12 +18,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Operacion {
-    
-    private Long                id;
-    private List<Parametro>     parameters;
-    private Character           type;
-    private BigDecimal          result;
-    private LocalDateTime       sysDate;
+public class ParametroDto implements Serializable {
 
+    private Long                id;
+    private BigDecimal          parameter;
+
+    @JsonIgnore
+    private OperacionDto        operacion;
+    
 }

@@ -1,5 +1,6 @@
 package com.dfa.sanitest.infraestructure.rest.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,10 +18,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class OperacionDto {
+public class OperacionDto implements Serializable {
     
     private Long                id;
-    private List<BigDecimal>    parameters;
+    private List<ParametroDto>    parameters;
     private Character           type;
     private BigDecimal          result;
     private LocalDateTime       sysDate;

@@ -15,7 +15,7 @@ import com.dfa.sanitest.infraestructure.db.dao.OperacionDao_;
 
 public class OperacionSpecification {
     
-    public static Specification<OperacionDao> filter (OperacionDao filter, boolean order, boolean asc) throws Exception {
+    public static Specification<OperacionDao> buildFilter (OperacionDao filter, boolean order, boolean asc) throws Exception {
 
         try {
 
