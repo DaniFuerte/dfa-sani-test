@@ -19,6 +19,5 @@ public class Parametro {
 
     private Long                id;
     private BigDecimal          parameter;
-    private Operacion           operacion;
     
 }

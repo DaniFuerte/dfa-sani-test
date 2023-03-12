@@ -64,7 +64,7 @@ public class OperacionResource implements OperacionApi {
 
         try {
             
-            OperacionDto        filter          =   new OperacionDto(null,null,type,result,sysDate);
+            OperacionDto        filter          =   new OperacionDto(null,null,type,sysDate,result);
             List<Operacion>     resultList      =   service.findByFilter(mapper.toOperacionDomain(filter), order, asc);
             resultList.forEach(item -> finalResult.add(mapper.tOperacionDto(item)));
             return ResponseEntity.ok(finalResult);

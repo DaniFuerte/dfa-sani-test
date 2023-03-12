@@ -1,7 +1,5 @@
 package com.dfa.sanitest.infraestructure.utils;
 
-import org.apache.logging.log4j.util.Strings;
-
 public class SaniTestConsts {
 
     private static final String SPACE_STRING        = " ";

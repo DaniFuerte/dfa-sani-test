@@ -3,6 +3,7 @@ package com.dfa.sanitest.infraestructure.rest.dto;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -21,9 +22,8 @@ import lombok.ToString;
 public class ParametroDto implements Serializable {
 
     private Long                id;
+    
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private BigDecimal          parameter;
-
-    @JsonIgnore
-    private OperacionDto        operacion;
     
 }

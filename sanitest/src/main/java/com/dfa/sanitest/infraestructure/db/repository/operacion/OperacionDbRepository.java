@@ -1,4 +1,4 @@
-package com.dfa.sanitest.infraestructure.db.repository;
+package com.dfa.sanitest.infraestructure.db.repository.operacion;
 
 import java.util.ArrayList;
 import java.util.List;

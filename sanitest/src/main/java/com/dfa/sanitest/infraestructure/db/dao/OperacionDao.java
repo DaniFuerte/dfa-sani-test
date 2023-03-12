@@ -30,7 +30,7 @@ public class OperacionDao {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long                id;
 
-    @OneToMany(mappedBy = "operacion", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ParametroDao>    parameters;
 
     private Character           type;

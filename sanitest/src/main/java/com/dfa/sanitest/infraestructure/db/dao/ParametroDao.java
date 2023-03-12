@@ -26,8 +26,5 @@ public class ParametroDao {
     private Long                id;
 
     private BigDecimal          parameter;
-
-    @ManyToOne
-    private OperacionDao        operacion;
     
 }

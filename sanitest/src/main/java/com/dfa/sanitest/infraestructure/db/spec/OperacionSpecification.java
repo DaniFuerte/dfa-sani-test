@@ -1,5 +1,7 @@
 package com.dfa.sanitest.infraestructure.db.spec;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -30,7 +32,8 @@ public class OperacionSpecification {
                         predicateList.add(cb.equal(root.get(OperacionDao_.result), filter.getResult()));
                     }
                     if(Objects.nonNull(filter.getSysDate())) {
-                        predicateList.add(cb.lessThanOrEqualTo(root.get(OperacionDao_.sysDate), filter.getSysDate()));
+                       predicateList.add(cb.lessThanOrEqualTo(root.get(OperacionDao_.sysDate).as(LocalDate.class), 
+                        LocalDate.of(filter.getSysDate().getYear(), filter.getSysDate().getMonth(), filter.getSysDate().getDayOfMonth())));
                     }
                 }
 
